@@ -1,6 +1,6 @@
 #include <iostream>
 #include <exception>
-#include "PriorityQueue.h"
+//#include "PriorityQueue.h"
 #include "Dog.h" 
 
 using std::cout; 
@@ -11,7 +11,7 @@ using std::exception;
 int main()
 {
 	std::cout << "Hello PriorityQueue.h" << std::endl;
-
+	/*
 	{
 		PriorityQueue<Dog> pq;
 
@@ -59,6 +59,7 @@ int main()
 			cout << e.what() << endl;
 		}
 	}
+	*/
 
 	return 0;
 }
