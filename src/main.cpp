@@ -1,6 +1,7 @@
 #include <iostream>
 #include <exception>
 //#include "PriorityQueue.h"
+#include "IntegerPriorityQueue.h"
 #include "Dog.h" 
 
 using std::cout; 
@@ -10,7 +11,7 @@ using std::exception;
 
 int main()
 {
-	std::cout << "Hello PriorityQueue.h" << std::endl;
+	//std::cout << "Hello PriorityQueue.h" << std::endl;
 	/*
 	{
 		PriorityQueue<Dog> pq;
@@ -60,6 +61,33 @@ int main()
 		}
 	}
 	*/
+
+	IntegerPriorityQueue queue1;
+
+	// Test for push function
+	queue1.push(5);
+	queue1.push(10);
+	queue1.push(15);
+	std::cout << "Test 1: " << (queue1.size() == 3 ? "Passed" : "Failed") << std::endl;
+
+	// Test for remove function
+	queue1.remove(10);
+	std::cout << "Test 2: " << (queue1.size() == 2 ? "Passed" : "Failed") << std::endl;
+
+	// Test for contains function
+	std::cout << "Test 3: " << (queue1.contains(5) ? "Passed" : "Failed") << std::endl;
+	std::cout << "Test 4: " << (!queue1.contains(10) ? "Passed" : "Failed") << std::endl;
+
+
+	// Test for equals function
+	IntegerPriorityQueue queue2;
+	queue2.push(5);
+	queue2.push(15);
+	std::cout << "Test 5: " << (queue1.equals(queue2) ? "Passed" : "Failed") << std::endl;
+
+	// Test for operator overloads
+	std::cout << "Test 6: " << (queue1 == queue2 ? "Passed" : "Failed") << std::endl;
+	std::cout << "Test 7: " << (!(queue1 != queue2) ? "Passed" : "Failed") << std::endl;
 
 	return 0;
 }
