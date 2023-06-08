@@ -1,6 +1,6 @@
 #include <iostream>
 #include <exception>
-//#include "PriorityQueue.h"
+#include "PriorityQueue.h"
 #include "IntegerPriorityQueue.h"
 #include "Dog.h" 
 
@@ -11,9 +11,10 @@ using std::exception;
 
 int main()
 {
-	//std::cout << "Hello PriorityQueue.h" << std::endl;
-	/*
+	std::cout << "Hello PriorityQueue.h" << std::endl;
+	
 	{
+		
 		PriorityQueue<Dog> pq;
 
 		pq.push(Dog(1, 13, "Dog03"));
@@ -35,7 +36,7 @@ int main()
 			cout << e.what() << endl;
 		}
 	}
-
+	
 
 	cout << endl << endl; 
 	{
@@ -60,8 +61,10 @@ int main()
 			cout << e.what() << endl;
 		}
 	}
-	*/
+	
 
+
+	/*
 	IntegerPriorityQueue queue1;
 
 	// Test for push function
@@ -88,6 +91,7 @@ int main()
 	// Test for operator overloads
 	std::cout << "Test 6: " << (queue1 == queue2 ? "Passed" : "Failed") << std::endl;
 	std::cout << "Test 7: " << (!(queue1 != queue2) ? "Passed" : "Failed") << std::endl;
+	*/
 
 	return 0;
 }
