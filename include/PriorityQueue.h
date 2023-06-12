@@ -6,7 +6,9 @@
 #include "Dog.h"
 using namespace std;
 
-
+//===================================
+//========== Comparators=============
+//===================================
 template <typename T>
 struct MyComparator {
     bool operator()(const T& a, const T& b) const {
@@ -110,7 +112,7 @@ PriorityQueue<T>::PriorityQueue(const T& element) {
 template <typename T>
 PriorityQueue<T>::PriorityQueue(const T* arr, const size_t size) {
     for (size_t i = 0; i < size; ++i) {
-        _priorityQueue.push_back(arr[i]);
+        _priorityQueue.push_back(arr[i]); // add the elements to the queue
     }
     _priorityQueue.sort(Compare); // sort the queue
 }
@@ -124,7 +126,10 @@ PriorityQueue<T>::~PriorityQueue() {
 template <typename T>
 void PriorityQueue<T>::push(const T& newElement) {
     auto it = _priorityQueue.begin();
-    while (it != _priorityQueue.end() && !Compare(newElement, *it)) {
+
+    // while the new element is bigger than the current element
+    while (it != _priorityQueue.end() && !Compare(newElement, *it)) 
+    {
         it++;
     }
     _priorityQueue.insert(it, newElement);
@@ -135,9 +140,9 @@ T PriorityQueue<T>::poll() {
     if (_priorityQueue.empty()) {
         throw exception("The queue is empty");
     }
-    T smallestElement = _priorityQueue.front();
-    _priorityQueue.pop_front();
-    return smallestElement;
+    T smallestElement = _priorityQueue.front(); // save the smallest element
+    _priorityQueue.pop_front(); // remove the smallest element : the first element
+    return smallestElement; 
 }
 
 template <typename T>
@@ -155,7 +160,7 @@ T PriorityQueue<T>::peek() const {
     if (_priorityQueue.empty()) {
         throw exception("The queue is empty");
     }
-    return _priorityQueue.front();
+    return _priorityQueue.front(); // return the smallest element
 }
 
 template <typename T>
@@ -163,7 +168,7 @@ T PriorityQueue<T>::back() const {
     if (_priorityQueue.empty()) {
         throw exception("The queue is empty");
     }
-    return _priorityQueue.back();
+    return _priorityQueue.back(); // return the biggest element
 }
 
 
